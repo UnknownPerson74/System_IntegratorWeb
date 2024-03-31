@@ -1,0 +1,233 @@
+﻿@page "/employee/leavesApplication"
+<form >
+      
+            <div class="container-fluid px-4 py-2 px-md-5 text-center text-lg-start my-2">
+         
+                        <div class="row gx-lg-5 align-items-start mb-5">
+
+                            <div class="col-lg-6 p-0 pr-lg-2 mb-1 mb-lg-5 position-relative">
+                                <div id="radius-shape-1" class=" mt-5 position-absolute rounded-circle shadow animate__animated animate__delay-1s animate__zoomIn"></div>
+                                <div id="radius-shape-2" class="position-absolute shadow animate__animated animate__delay-1s animate__zoomIn"></div>
+
+                                <div class="card bg-glass">
+                                    <div class="card-header bg-transparent">
+                                        <div class="row border  ">
+                                            <div class="col-12  col-sm-4 col-md-5 col-xl-4 ">
+                                                <asp.Image ID="imgUser" ImageUrl="~/ArtImages/10337 .jpg" CssClass="card-img-top  float-left"  Height="192px" Width="168px" alt="#" />
+                                              
+                                            </div>
+                                            <div class="col-12 col-sm-6  ">
+
+                                                <span class="font-weight-bold float-left">Code : &nbsp;</span>
+                                                <asp.Label ID="lblEmpCode" CssClass="float-left"></asp.Label>
+
+                                                <br />
+
+                                                <span class="font-weight-bold float-left">Name :&nbsp;</span>
+                                                <asp.Label ID="lblEmpName" CssClass="float-left"></asp.Label>
+
+
+                                                <br />
+
+                                                <span class="font-weight-bold float-left">Designation : &nbsp; </span>
+                                                <asp.Label ID="lblDesignation" CssClass="float-left"></asp.Label>
+
+
+                                                <br />
+
+
+                                                <span class="font-weight-bold float-left">Join Date : &nbsp;</span>
+                                                <asp.Label ID="lblJoinDate" CssClass="float-left"></asp.Label>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body px-4 py-1 px-md-5">
+                                        <div class="row">
+                                            <div class="col">
+
+                                                <h5 class="card-title">چُھٹیوں کی تفصیل</h5>
+
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3" style="border:2px solid;border-color: #0020d3">
+                                              <div class="col-3 col-sm-5 text-right pl-0 pr-0">
+                                <asp.Label CssClass="text-black" ID="lblLeavesMonth" Text="0" FontNames="Calibri" FontSize="Medium"  FontUnderline=false FontBold=true></asp.Label>
+                                                <br />
+                                                <asp.Label CssClass="text-black" ID="lblLeavesYear" Text="0" FontNames="Calibri" FontSize="Medium" FontUnderline=false FontBold=true></asp.Label>
+                                                <br />
+                                                <asp.Label CssClass="text-black" ID="lblLeavesBalance" Text="0" FontNames="Calibri" FontSize="Medium" FontUnderline=false FontBold=true></asp.Label>
+                                                <br />
+
+
+                                            </div>
+                                            <div class="col-8 col-sm-6 text-left pl-0 pr-2">
+
+
+                                <asp.Label CssClass="text-black" ID="Label16" Text=" : مہینے میں کل چُھٹیاں" FontNames="Calibri"  FontSize="Medium" FontBold=true></asp.Label>
+                                                <br />
+                                <asp.Label CssClass="text-black" ID="Label18" Text=" : سال میں کل چُھٹیاں" FontNames="Calibri" FontSize="Medium" FontBold=true></asp.Label>
+                                                <br />
+                                                <asp.Label CssClass="text-black" ID="Label19" Text=" : بقایا چُھٹیاں " FontNames="Calibri" FontSize="Medium" FontBold=true></asp.Label>
+                                                <br />
+                                            </div>
+
+                                         
+                                        </div>
+                                           <a class=" nav-link btn-link bg-danger text-white" href="Employee_LeavesDetail.aspx">چُھٹیوں کی تفصیل
+                    </a>
+                                    </div>
+                                     <div class="card-footer p-0 p-md-2">
+                                                <asp.Panel ScrollBars="ScrollBars.Both">
+                                                                                                  
+                                                <asp.GridView  CssClass=" table table-bordered text-black mb-0" ID="gvLeaves" DataKeyNames="SLNo" ForeColor="#333333" AutoGenerateColumns="false" FontNames="Calibri"
+                                                    HeaderStyle-BackColor="White" HeaderStyle-ForeColor="Black" HeaderStyle-HorizontalAlign="Center" BackColor="#CCFFCC">
+                                                    <FooterStyle BackColor="#CCFFCC" />
+                                                    <HeaderStyle BackColor="#99C9FF" ForeColor="Black" HorizontalAlign="HorizontalAlign.Center" VerticalAlign="VerticalAlign.Middle" />
+                                                    <RowStyle BackColor="White" Wrap="false" />
+                                                    <SelectedRowStyle BackColor="cornflowerblue" FontBold=true ForeColor="#F7F7F7" BorderColor="#d5e3d5"  />
+
+                                                    <Columns>
+
+                                                        <asp.BoundField DataField="AttDate" HeaderText="تاریخ" DataFormatString="{0:dd MMM yyyy}"  >
+                                            <HeaderStyle HorizontalAlign="HorizontalAlign.Center" />
+                                            <ItemStyle HorizontalAlign="HorizontalAlign.Center" />
+                                                        </asp.BoundField>
+                                                        <asp.BoundField DataField="SLNo" HeaderText="No" Visible="false" >
+                                            <HeaderStyle HorizontalAlign="HorizontalAlign.Center" />
+                                            <ItemStyle HorizontalAlign="HorizontalAlign.Center" />
+                                                        </asp.BoundField>
+
+                                                        <asp.BoundField DataField="SLOutTime" HeaderText="Out Time" DataFormatString="{0:hh mm tt}" Visible="false" >
+                                            <HeaderStyle HorizontalAlign="HorizontalAlign.Center" />
+                                            <ItemStyle HorizontalAlign="HorizontalAlign.Left" />
+                                                        </asp.BoundField> 
+                                                        
+                                                        <asp.BoundField DataField="SLInTime" HeaderText="In Time" DataFormatString="{0:hh mm tt}"  Visible="false" >
+                                            <HeaderStyle HorizontalAlign="HorizontalAlign.Center" />
+                                            <ItemStyle HorizontalAlign="HorizontalAlign.Left" />
+                                                        </asp.BoundField>
+
+                                                        <asp.BoundField  HeaderText="قِسم"  DataField="SLType" >
+                                            <HeaderStyle HorizontalAlign="HorizontalAlign.Center" />
+                                            <ItemStyle HorizontalAlign="HorizontalAlign.Left" />
+                                                        </asp.BoundField>
+
+                                                        <asp.BoundField  HeaderText="وجہ"  DataField="Reason" >
+                                            <HeaderStyle HorizontalAlign="HorizontalAlign.Center" />
+                                            <ItemStyle HorizontalAlign="HorizontalAlign.Left" />
+                                                        </asp.BoundField>
+
+                                        <asp.BoundField HeaderText="منظوری" DataField="Approved">
+                                            <HeaderStyle HorizontalAlign="HorizontalAlign.Center" />
+                                            <ItemStyle HorizontalAlign="HorizontalAlign.Left" />
+
+                                                        </asp.BoundField>
+                             
+                                                    </Columns>
+                                                </asp.GridView>
+                                                    </asp.Panel>
+                                  
+                                    </div>
+                                </div>
+                                <div id="radius-shape-4" class="mt-5 position-absolute rounded-circle shadow animate__animated animate__delay-1s animate__zoomIn"></div>
+
+
+                            </div>
+                            <div class="col-lg-6 p-0 mb-5 mb-lg-0 position-relative">
+
+                                <div id="radius-shape-3" class="position-absolute rounded-circle shadow animate__animated animate__delay-1s animate__zoomIn"></div>
+
+                                <div class="card bg-glass">
+                                    <div class="card-header">
+                                      <label  class="font-weight-bold" style="FontSize:large">درخواست فارم</label> 
+                                        
+                                                <asp.LinkButton ID="btnReload" CssClass="btn btn-primary btn-outline-dark text-white border-0 font-weight-bolder float-right">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
+                                                <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
+                                                </svg>
+                                                </asp.LinkButton>
+                                    </div>
+                                    <div class="card-body px-4 py-4 px-md-5">
+                                        <div class="form-row text-left ">
+                                               <div class="col-12 col-sm-6 mb-2 ">
+                                            
+                                                <label for="txtSLNo">Leave No</label>
+                                                
+                                                  <label for="txtSLNo" class="float-right">رخصت نمبر</label>
+
+                                                <input readonly="readonly" class=" form-control bg-light" type="text" style="font-family: calibri; FontSize: Medium; height: 32px; border-radius: 4px; border-style: ridge; border: 1px solid #ccc;" id="txtSLNo" value="" />
+
+                                            </div>
+                                            <div class="col-12 col-sm-6 mb-2 ">
+                                            
+                                                <label for="dtpLeaveDate">Date</label>
+                                                <label for="cboLeaveType" class="float-right">تاریخ</label>
+
+                                                <input type="date" class="form-control" style="font-family: calibri; FontSize: Medium; height: 32px; border-radius: 4px; border-style: ridge; border: 1px solid #ccc;" id="dtpLeaveDate" value="" />
+
+                                            </div>
+
+                                            <!-- Text input -->
+                                            <div class="col-12 mb-2">
+                                                <label for="cboLeaveType">Leave Type</label>
+                                                <label for="cboLeaveType" class="float-right">چھٹی کی قِسم</label>
+                                                <asp.DropDownList ID="cboLeaveType" CssClass="custom-select">
+                                                    <asp:ListItem>Full</asp:ListItem>
+
+                                                    <asp:ListItem>First Half Leave</asp:ListItem>
+                                                    <asp:ListItem>Second Half Leave</asp:ListItem>
+                                                </asp.DropDownList>
+                                            </div>
+                                                                                         
+                                            <div class="col-12 mb-2">
+                                                <label for="cboNature">Nature of Leave</label>
+                                  
+                                                <asp.DropDownList ID="cboNature"  CssClass="custom-select">
+                                                    <asp:ListItem>Personal</asp:ListItem>
+                                                    <asp:ListItem>Official</asp:ListItem>
+                                                </asp.DropDownList>
+                                            </div>
+                                              <!-- Text input -->
+                                            <div class="col-12 mb-2">
+                                                <label for="cboLeaveType">Reason</label>
+                                                  <label for="cboLeaveType" class="float-right">وجہ</label>
+                                                <asp.DropDownList ID="cboReason" AutoPostBack="true" CssClass="custom-select">
+                                                    <asp.ListItem>شادی کی درخواست</asp.ListItem>
+                                                    <asp.ListItem>بیماری کی درخواست</asp.ListItem>
+                                        <asp.ListItem>فوتگی کی درخواست</asp.ListItem>
+                                                    <asp.ListItem>کوئی اور وجہ</asp.ListItem>
+                                                </asp.DropDownList>
+                                            </div>  
+                                            <!-- Message input -->
+                                            <div class="col-12 mb-2">
+                                                <label for="cboLeaveType">Detail Reason</label>
+                                                  <label for="cboLeaveType" class="float-right">تفصیلی وجہ</label>
+
+                                                <asp.TextBox TextMode=System.Web.UI.WebControls.TextBoxMode.MultiLine CssClass="form-control" ID="txtOtherReason" placeholder="...تفصیلی وجہ بیان کریں"></asp.TextBox>
+
+                                            </div>
+
+                                                 <div class="col-12 mb-2">
+                                            <asp.Button ID="btnSubmit" type="submit" class="btn btn-primary btn-block mb-4" Text="درخواست جمع کروائیں" />
+
+                                              </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                     
+            </div>
+  
+
+    </form>
+@code {
+
+}

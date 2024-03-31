@@ -1,0 +1,119 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\System_IntegratorWebGHBlazor\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2C8593D3-8019-4F80-9EBE-F8263BC7C5CA}|System_IntegratorWeb\\System_IntegratorWeb.csproj|d:\\system_integratorwebghblazor\\system_integratorweb\\pages\\employees\\employee_login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2C8593D3-8019-4F80-9EBE-F8263BC7C5CA}|System_IntegratorWeb\\System_IntegratorWeb.csproj|solutionrelative:system_integratorweb\\pages\\employees\\employee_login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C8593D3-8019-4F80-9EBE-F8263BC7C5CA}|System_IntegratorWeb\\System_IntegratorWeb.csproj|D:\\System_IntegratorWebGHBlazor\\system_integratorweb\\test.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2C8593D3-8019-4F80-9EBE-F8263BC7C5CA}|System_IntegratorWeb\\System_IntegratorWeb.csproj|solutionrelative:system_integratorweb\\test.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C8593D3-8019-4F80-9EBE-F8263BC7C5CA}|System_IntegratorWeb\\System_IntegratorWeb.csproj|D:\\System_IntegratorWebGHBlazor\\system_integratorweb\\pages\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2C8593D3-8019-4F80-9EBE-F8263BC7C5CA}|System_IntegratorWeb\\System_IntegratorWeb.csproj|solutionrelative:system_integratorweb\\pages\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C8593D3-8019-4F80-9EBE-F8263BC7C5CA}|System_IntegratorWeb\\System_IntegratorWeb.csproj|D:\\System_IntegratorWebGHBlazor\\system_integratorweb\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2C8593D3-8019-4F80-9EBE-F8263BC7C5CA}|System_IntegratorWeb\\System_IntegratorWeb.csproj|solutionrelative:system_integratorweb\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C8593D3-8019-4F80-9EBE-F8263BC7C5CA}|System_IntegratorWeb\\System_IntegratorWeb.csproj|D:\\System_IntegratorWebGHBlazor\\system_integratorweb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C8593D3-8019-4F80-9EBE-F8263BC7C5CA}|System_IntegratorWeb\\System_IntegratorWeb.csproj|solutionrelative:system_integratorweb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C8593D3-8019-4F80-9EBE-F8263BC7C5CA}|System_IntegratorWeb\\System_IntegratorWeb.csproj|D:\\System_IntegratorWebGHBlazor\\system_integratorweb\\global.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C8593D3-8019-4F80-9EBE-F8263BC7C5CA}|System_IntegratorWeb\\System_IntegratorWeb.csproj|solutionrelative:system_integratorweb\\global.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Employee_Login.razor",
+              "DocumentMoniker": "D:\\System_IntegratorWebGHBlazor\\System_IntegratorWeb\\Pages\\Employees\\Employee_Login.razor",
+              "RelativeDocumentMoniker": "System_IntegratorWeb\\Pages\\Employees\\Employee_Login.razor",
+              "ToolTip": "D:\\System_IntegratorWebGHBlazor\\System_IntegratorWeb\\Pages\\Employees\\Employee_Login.razor",
+              "RelativeToolTip": "System_IntegratorWeb\\Pages\\Employees\\Employee_Login.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-07T20:37:49.08Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\System_IntegratorWebGHBlazor\\System_IntegratorWeb\\Pages\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "System_IntegratorWeb\\Pages\\_Layout.cshtml",
+              "ToolTip": "D:\\System_IntegratorWebGHBlazor\\System_IntegratorWeb\\Pages\\_Layout.cshtml",
+              "RelativeToolTip": "System_IntegratorWeb\\Pages\\_Layout.cshtml",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAqwBEAAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-01T07:32:51.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_Imports.razor",
+              "DocumentMoniker": "D:\\System_IntegratorWebGHBlazor\\System_IntegratorWeb\\_Imports.razor",
+              "RelativeDocumentMoniker": "System_IntegratorWeb\\_Imports.razor",
+              "ToolTip": "D:\\System_IntegratorWebGHBlazor\\System_IntegratorWeb\\_Imports.razor",
+              "RelativeToolTip": "System_IntegratorWeb\\_Imports.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-01T07:28:39.536Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\System_IntegratorWebGHBlazor\\System_IntegratorWeb\\Program.cs",
+              "RelativeDocumentMoniker": "System_IntegratorWeb\\Program.cs",
+              "ToolTip": "D:\\System_IntegratorWebGHBlazor\\System_IntegratorWeb\\Program.cs",
+              "RelativeToolTip": "System_IntegratorWeb\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-01T07:27:44.326Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Global.cs",
+              "DocumentMoniker": "D:\\System_IntegratorWebGHBlazor\\System_IntegratorWeb\\Global.cs",
+              "RelativeDocumentMoniker": "System_IntegratorWeb\\Global.cs",
+              "ToolTip": "D:\\System_IntegratorWebGHBlazor\\System_IntegratorWeb\\Global.cs",
+              "RelativeToolTip": "System_IntegratorWeb\\Global.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-01T07:27:41.56Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Test.razor",
+              "DocumentMoniker": "D:\\System_IntegratorWebGHBlazor\\System_IntegratorWeb\\Test.razor",
+              "RelativeDocumentMoniker": "System_IntegratorWeb\\Test.razor",
+              "ToolTip": "D:\\System_IntegratorWebGHBlazor\\System_IntegratorWeb\\Test.razor",
+              "RelativeToolTip": "System_IntegratorWeb\\Test.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAABcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-01T07:23:26.312Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

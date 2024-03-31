@@ -1,0 +1,123 @@
+﻿@inherits LayoutComponentBase
+
+<MudThemeProvider Theme="_themeManager.Theme" IsDarkMode="@DarkModeToggle" />
+<MudDialogProvider />
+<MudSnackbarProvider />
+@if (Global.EmpCode != "") {
+
+<MudLayout Style="overflow-y:hidden">
+    @* overflow-hidden background-radial-gradient *@
+    <MudAppBar  Dense=true Fixed  DisableGutters Elevation="1">
+
+        <MudIconButton Class="ml-2" Icon="@MudBlazor.Icons.Material.Rounded.Notes" Color="Color.Surface" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
+        <img src="/artimages/godgore-logo-brand.png" height="30" alt="#" loading="lazy" />
+        <MudSpacer />
+        <MudMenu AnchorOrigin="Origin.BottomRight" Dense="true" Class="mr-4">
+            <ActivatorContent>
+                <MudAvatar Size=Size.Medium Image="/artimages/godgore-logo-brand.png" />
+            </ActivatorContent>
+            <ChildContent>
+
+                <MudListItem Text="پاسورڈ تبدیل کریں" Dense=true Icon="@MudBlazor.Icons.Material.Rounded.Person" Href="employee/change" />
+                <MudDivider Class="mb-2" />
+
+                <MudListItem Text="لاگ آوٹ" Dense=true Icon="@MudBlazor.Icons.Material.Outlined.Login" Href="/" OnClick="@Global.Clear" />
+            </ChildContent>
+        </MudMenu>
+
+
+        <System_IntegratorWeb.Pages.LoadingIndicator IsLoading="@isLoading" />
+
+    </MudAppBar>
+    <MudDrawer  Class="rounded-right mt-1 " @bind-Open="_drawerOpen" Elevation="1" ClipMode="_themeManager.DrawerClipMode">
+        <MudToolBar Dense="true" DisableGutters="true" Class="px-1 docs-gray-bg">
+
+            <MudIconButton Icon="@MudBlazor.Icons.Material.Rounded.Close" Color="Color.Inherit" OnClick="@DrawerToggle" />
+            <MudSpacer />
+            <MudTooltip Duration="1000" Text="@(DarkModeToggle == true ? "Switch to Light Theme" :  "Switch to Dark Theme")">
+                <MudIconButton Icon="@(DarkModeToggle == false ? @MudBlazor.Icons.Material.Filled.LightMode : @MudBlazor.Icons.Material.Filled.DarkMode)" Color="Color.Primary" OnClick="@ModeToggle" />
+            </MudTooltip>
+
+        </MudToolBar>
+        <NavMenu />
+    </MudDrawer>
+    @*  <div id="radius-shape-1" class="gooey position-fixed  shadow "></div>
+    <div id="radius-shape-2" class="gooey position-fixed   shadow "></div>
+    <div class="gooey position-fixed shadow" style="bottom:50px"></div>*@
+    <MudMainContent  >
+
+        <MudContainer MaxWidth="MaxWidth.False" Class="my-1">
+            @Body
+        
+            <MudScrollToTop TopOffset="100" Style="z-index:2000;">
+                <MudFab Icon="@MudBlazor.Icons.Material.Filled.KeyboardArrowUp" Color="Color.Error" />
+            </MudScrollToTop>
+@* 
+         <MudAppBar Elevation="1" Style="top: auto; bottom: 0">
+   This is footer
+</MudAppBar> *@
+        </MudContainer>
+
+    </MudMainContent>
+
+    </MudLayout>
+
+}
+else
+{
+    <PageTitle>Error</PageTitle>
+        <MudIconButton Class="ml-2" Icon="@MudBlazor.Icons.Material.Rounded.ArrowBack" Color="Color.Surface" Edge="Edge.Start" Href="/" />
+    
+}
+
+@code {
+    Color Color = Color.Success;
+    private void OnScroll(ScrollEventArgs e)
+    {
+        Color = (e.FirstChildBoundingClientRect.Top * -1) switch
+        {
+            var x when x < 500 => Color.Primary,
+            var x when x < 1500 => Color.Secondary,
+            var x when x < 2500 => Color.Tertiary,
+            _ => Color.Error
+        };
+    }
+    private bool isLoading = false;
+
+    private ThemeManagerTheme _themeManager = new ThemeManagerTheme();
+
+    public bool _drawerOpen = true;
+    public bool _themeManagerOpen = false;
+    public bool DarkModeToggle = false;
+
+    void ModeToggle()
+    {
+        DarkModeToggle = !DarkModeToggle;
+    }
+    
+    void DrawerToggle()
+    {
+        _drawerOpen = !_drawerOpen;
+    }
+
+    void OpenThemeManager(bool value)
+    {
+        _themeManagerOpen = value;
+    }
+
+    protected override void OnInitialized()
+    {
+
+        _themeManager.Theme = new MudBlazorAdminDashboard();
+        _themeManager.DrawerClipMode = DrawerClipMode.Always;
+        _themeManager.FontFamily = "Montserrat";
+        // _themeManager.DefaultBorderRadius = 3;
+        // HandleButtonClick();
+    }
+
+    private List<BreadcrumbItem> _items = new List<BreadcrumbItem>
+{
+        new BreadcrumbItem("Personal", href: "#"),
+        new BreadcrumbItem("Dashboard", href: "#"),
+    };
+}

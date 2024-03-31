@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\GH Folder New\\System_IntegratorWebGHBlazor\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2C8593D3-8019-4F80-9EBE-F8263BC7C5CA}|System_IntegratorWeb\\System_IntegratorWeb.csproj|d:\\gh folder new\\system_integratorwebghblazor\\system_integratorweb\\global.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C8593D3-8019-4F80-9EBE-F8263BC7C5CA}|System_IntegratorWeb\\System_IntegratorWeb.csproj|solutionrelative:system_integratorweb\\global.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C8593D3-8019-4F80-9EBE-F8263BC7C5CA}|System_IntegratorWeb\\System_IntegratorWeb.csproj|d:\\gh folder new\\system_integratorwebghblazor\\system_integratorweb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C8593D3-8019-4F80-9EBE-F8263BC7C5CA}|System_IntegratorWeb\\System_IntegratorWeb.csproj|solutionrelative:system_integratorweb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Global.cs",
+              "DocumentMoniker": "D:\\GH Folder New\\System_IntegratorWebGHBlazor\\System_IntegratorWeb\\Global.cs",
+              "RelativeDocumentMoniker": "System_IntegratorWeb\\Global.cs",
+              "ToolTip": "D:\\GH Folder New\\System_IntegratorWebGHBlazor\\System_IntegratorWeb\\Global.cs",
+              "RelativeToolTip": "System_IntegratorWeb\\Global.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-31T20:18:54.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\GH Folder New\\System_IntegratorWebGHBlazor\\System_IntegratorWeb\\Program.cs",
+              "RelativeDocumentMoniker": "System_IntegratorWeb\\Program.cs",
+              "ToolTip": "D:\\GH Folder New\\System_IntegratorWebGHBlazor\\System_IntegratorWeb\\Program.cs",
+              "RelativeToolTip": "System_IntegratorWeb\\Program.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-31T20:18:50.017Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

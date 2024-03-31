@@ -1,0 +1,21 @@
+﻿<MudCard Elevation="0" Class="position-relative bg-glass" >
+    <MudCardHeader>
+        <CardHeaderAvatar >
+            <div class="d-flex justify-center mb-4">
+                <MudAvatar Image=@Global.ImagePath Style="height:100px; width:100px;">
+                   
+                </MudAvatar>
+
+            </div>
+        </CardHeaderAvatar>
+        <CardHeaderContent>
+            <MudText Typo="Typo.body2">Jonny Larsson</MudText>
+            <MudText Typo="Typo.caption">IT Consultant</MudText>
+        </CardHeaderContent>
+    </MudCardHeader>
+</MudCard>
+
+@code {
+    [Parameter] public string Class { get; set; }
+    [Parameter] public string Style { get; set; }
+}

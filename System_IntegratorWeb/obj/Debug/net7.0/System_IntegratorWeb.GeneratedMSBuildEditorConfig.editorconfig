@@ -1,0 +1,151 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = System_IntegratorWeb
+build_property.RootNamespace = System_IntegratorWeb
+build_property.ProjectDir = D:\GH Folder New\System_IntegratorWebGHBlazor\System_IntegratorWeb\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\GH Folder New\System_IntegratorWebGHBlazor\System_IntegratorWeb
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/GH Folder New/System_IntegratorWebGHBlazor/System_IntegratorWeb/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GH Folder New/System_IntegratorWebGHBlazor/System_IntegratorWeb/Pages/Applications/Chat/Chat.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXBwbGljYXRpb25zXENoYXRcQ2hhdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GH Folder New/System_IntegratorWebGHBlazor/System_IntegratorWeb/Pages/Applications/Chat/ChatChannels.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXBwbGljYXRpb25zXENoYXRcQ2hhdENoYW5uZWxzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GH Folder New/System_IntegratorWebGHBlazor/System_IntegratorWeb/Pages/Applications/Chat/ChatUsers.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXBwbGljYXRpb25zXENoYXRcQ2hhdFVzZXJzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GH Folder New/System_IntegratorWebGHBlazor/System_IntegratorWeb/Pages/Applications/Chat/User.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXBwbGljYXRpb25zXENoYXRcVXNlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GH Folder New/System_IntegratorWebGHBlazor/System_IntegratorWeb/Pages/Applications/Chat/UserMessage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXBwbGljYXRpb25zXENoYXRcVXNlck1lc3NhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GH Folder New/System_IntegratorWebGHBlazor/System_IntegratorWeb/Pages/Applications/Email/Email.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXBwbGljYXRpb25zXEVtYWlsXEVtYWlsLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GH Folder New/System_IntegratorWebGHBlazor/System_IntegratorWeb/Pages/Applications/Email/EmailNavList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXBwbGljYXRpb25zXEVtYWlsXEVtYWlsTmF2TGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GH Folder New/System_IntegratorWebGHBlazor/System_IntegratorWeb/Pages/Applications/Email/Inbox.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXBwbGljYXRpb25zXEVtYWlsXEluYm94LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GH Folder New/System_IntegratorWebGHBlazor/System_IntegratorWeb/Pages/Employees/Employee_Attendance.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95ZWVzXEVtcGxveWVlX0F0dGVuZGFuY2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GH Folder New/System_IntegratorWebGHBlazor/System_IntegratorWeb/Pages/Employees/Employee_Leaves.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95ZWVzXEVtcGxveWVlX0xlYXZlcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GH Folder New/System_IntegratorWebGHBlazor/System_IntegratorWeb/Pages/Employees/Employee_LeavesApplication.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95ZWVzXEVtcGxveWVlX0xlYXZlc0FwcGxpY2F0aW9uLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GH Folder New/System_IntegratorWebGHBlazor/System_IntegratorWeb/Pages/Employees/Employee_Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95ZWVzXEVtcGxveWVlX0xvZ2luLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GH Folder New/System_IntegratorWebGHBlazor/System_IntegratorWeb/Pages/LoadingIndicator.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9hZGluZ0luZGljYXRvci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GH Folder New/System_IntegratorWebGHBlazor/System_IntegratorWeb/Pages/Pages/Authentication/Forgot.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcQXV0aGVudGljYXRpb25cRm9yZ290LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GH Folder New/System_IntegratorWebGHBlazor/System_IntegratorWeb/Pages/Pages/Authentication/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcQXV0aGVudGljYXRpb25cTG9naW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GH Folder New/System_IntegratorWebGHBlazor/System_IntegratorWeb/Pages/Pages/Authentication/Register.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcQXV0aGVudGljYXRpb25cUmVnaXN0ZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GH Folder New/System_IntegratorWebGHBlazor/System_IntegratorWeb/Pages/Pages/Authentication/Reset.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcQXV0aGVudGljYXRpb25cUmVzZXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GH Folder New/System_IntegratorWebGHBlazor/System_IntegratorWeb/Pages/Pages/Utility/Faq.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcVXRpbGl0eVxGYXEucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GH Folder New/System_IntegratorWebGHBlazor/System_IntegratorWeb/Pages/Pages/Utility/WasmLoading.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZXNcVXRpbGl0eVxXYXNtTG9hZGluZy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GH Folder New/System_IntegratorWebGHBlazor/System_IntegratorWeb/Pages/Personal/Account.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGVyc29uYWxcQWNjb3VudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GH Folder New/System_IntegratorWebGHBlazor/System_IntegratorWeb/Pages/Personal/Dashboard.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGVyc29uYWxcRGFzaGJvYXJkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GH Folder New/System_IntegratorWebGHBlazor/System_IntegratorWeb/Pages/PersonCard.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGVyc29uQ2FyZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GH Folder New/System_IntegratorWebGHBlazor/System_IntegratorWeb/Shared/LoginLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXExvZ2luTGF5b3V0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GH Folder New/System_IntegratorWebGHBlazor/System_IntegratorWeb/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GH Folder New/System_IntegratorWebGHBlazor/System_IntegratorWeb/Shared/TestLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFRlc3RMYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GH Folder New/System_IntegratorWebGHBlazor/System_IntegratorWeb/Test.razor]
+build_metadata.AdditionalFiles.TargetPath = VGVzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GH Folder New/System_IntegratorWebGHBlazor/System_IntegratorWeb/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GH Folder New/System_IntegratorWebGHBlazor/System_IntegratorWeb/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-gg9ej0yyip
+
+[D:/GH Folder New/System_IntegratorWebGHBlazor/System_IntegratorWeb/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-g3qvm8zqy9
+
+[D:/GH Folder New/System_IntegratorWebGHBlazor/System_IntegratorWeb/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GH Folder New/System_IntegratorWebGHBlazor/System_IntegratorWeb/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GH Folder New/System_IntegratorWebGHBlazor/System_IntegratorWeb/Pages/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

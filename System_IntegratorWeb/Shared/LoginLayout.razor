@@ -1,0 +1,15 @@
+﻿@inherits LayoutComponentBase
+
+
+<MudThemeProvider Theme="_currentTheme" />
+<MudSnackbarProvider />
+
+<MudContainer MaxWidth="MaxWidth.False" Class="d-flex background-radial-gradient overflow-hidden pt-5" Style="min-height: 100vh;">
+    <div class="container mt-5  text-center">
+        @Body
+        </div>
+</MudContainer>
+
+@code {
+    private MudTheme _currentTheme = new MudBlazorAdminDashboard();
+}

@@ -1,0 +1,151 @@
+﻿@page "/employee/attendance"
+@inject ISnackbar Snackbar
+<PageTitle>Attendance</PageTitle>
+
+        <MudGrid>
+            <MudItem xs="12" sm="5" md="4">
+                <MudCard Elevation="3">
+
+                    <MudCardContent>
+                        <div class="d-flex justify-center mb-4">
+                            <MudAvatar Image="@AvatarImageLink" Style="height:197px; width:200px;">
+                                @if (AvatarImageLink == null)
+                                {
+                                    <MudIcon Icon="@AvatarIcon" Size="Size.Large"></MudIcon>
+                                }
+                            </MudAvatar>
+
+                        </div>
+                        <MudDivider />
+                        <MudText Align="Align.Center"> @Global.EmpCode</MudText>
+                        <MudText Align="Align.Center"> @FirstName @LastName</MudText>
+                        <MudText Align="Align.Center"> @JobTitle</MudText>
+                    </MudCardContent>
+
+                </MudCard>
+            </MudItem>
+            <MudItem xs="12" sm="7" md="8">
+                <MudCard Elevation="3">
+                    <MudCardHeader>
+                        <CardHeaderContent>
+                            <MudText Typo="Typo.h5">چُھٹیوں کی تفصیل</MudText>
+                        </CardHeaderContent>
+                    </MudCardHeader>
+                    <MudCardContent>
+                        <MudGrid Class="border bg-light rounded">
+                            <MudItem xs="6">
+                                <MudPaper Elevation=2 Square="true" Class="d-flex justify-content-center py-3">
+                                    <MudText Style="font-weight:600" Typo="Typo.body1">12</MudText>
+
+                                </MudPaper>
+                            </MudItem>
+                            <MudItem xs="6">
+                                <MudPaper Elevation=2 Square="true" Class="d-flex justify-content-center py-3 ">
+
+                                    <MudText Style="font-weight:600" Typo="Typo.body1">مہینے میں کل چُھٹیاں</MudText>
+                                </MudPaper>
+                            </MudItem>
+
+                            <MudItem xs="6">
+                                <MudPaper Elevation=2 Square="true" Class="d-flex justify-content-center py-3">
+                                    <MudText Style="font-weight:600" Typo="Typo.body1">12</MudText>
+
+                                </MudPaper>
+                            </MudItem>
+                            <MudItem xs="6">
+                                <MudPaper Elevation=2 Square="true" Class="d-flex justify-content-center py-3 ">
+
+                                    <MudText Style="font-weight:600" Typo="Typo.body1">سال میں کل چُھٹیاں</MudText>
+                                </MudPaper>
+                            </MudItem>
+
+                            <MudItem xs="6">
+                                <MudPaper Elevation=2 Square="true" Class="d-flex justify-content-center py-3">
+                                    <MudText Style="font-weight:600" Typo="Typo.body1">12</MudText>
+
+                                </MudPaper>
+                            </MudItem>
+                            <MudItem xs="6">
+                                <MudPaper Elevation=2 Square="true" Class="d-flex justify-content-center py-3 ">
+
+                                    <MudText Style="font-weight:600" Typo="Typo.body1">بقایا چُھٹیاں</MudText>
+                                </MudPaper>
+                            </MudItem>
+
+
+                        </MudGrid>
+                    </MudCardContent>
+                    <MudCardActions Class="pb-5 pl-4">
+                        @* <MudButton Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto" @onclick="@(() => SaveChanges("Profile details saved", Severity.Success))">Save Changes</MudButton> *@
+                    </MudCardActions>
+                </MudCard>
+            </MudItem>
+            <MudItem xs="12">
+                <MudCard Elevation="25">
+                    <MudCardHeader>
+                        <CardHeaderContent>
+                            <MudText Typo="Typo.h5">چُھٹیوں کی تفصیل</MudText>
+                        </CardHeaderContent>
+                    </MudCardHeader>
+                    <MudCardContent>
+                        <MudSimpleTable Hover="true" FixedHeader="true" Style="height:400px">
+                            <thead>
+                                <tr>
+                                    @foreach (var h in headings)
+                                    {
+                                        <th>@h</th>
+                                    }
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var row in rows)
+                                {
+                                    <tr>
+                                        @foreach (var x in row.Split())
+                                        {
+                                            <td>@x</td>
+                                        }
+                                    </tr>
+                                }
+                            </tbody>
+                        </MudSimpleTable>
+                    </MudCardContent>
+
+                </MudCard>
+            </MudItem>
+        </MudGrid>
+
+
+@code {
+
+    public string AvatarImageLink { get; set; } = "https://media-exp1.licdn.com/dms/image/C4D03AQGNO7uV7fRi7Q/profile-displayphoto-shrink_200_200/0/1531753989819?e=1614816000&v=beta&t=t2IEQlTyem3aFB1sQXFHrDGt0yMsNkPu7jDmMPoEbLg";
+    bool _LoadingShortLeave { get; set; } = false;
+    public string AvatarIcon { get; set; }
+    public string AvatarButtonText { get; set; } = "Delete Picture";
+    public Color AvatarButtonColor { get; set; } = Color.Error;
+    public string FirstName { get; set; } = "Jonny";
+    public string LastName { get; set; } = "Larsson";
+    public string JobTitle { get; set; } = "IT Consultant";
+    public string Email { get; set; } = "Youcanprobably@findout.com";
+    string[] headings = { "ID", "Name", "Email", "Gender", "IP Address" };
+    string[] rows = {
+        @"1 Krishna kpartner0@usatoday.com Male 28.25.250.202",
+        @"2 Webb wstitle1@ning.com Male 237.168.134.114",
+        @"3 Nathanil nneal2@cyberchimps.com Male 92.6.0.175",
+        @"4 Adara alockwood3@patch.com Female 182.174.217.152",
+        @"5 Cecilius cchaplin4@shinystat.com Male 195.124.144.18",
+        @"6 Cicely cemerine9@soup.io Female 138.94.191.43",
+    };
+
+    private async Task SaveChanges(string message, Severity severity)
+    {
+        _LoadingShortLeave = true;
+        await Task.Delay(2000);
+        Snackbar.Add(message, severity, config =>
+        {
+            config.ShowCloseIcon = true;
+        });
+        _LoadingShortLeave = false;
+    }
+
+}

@@ -1,0 +1,156 @@
+﻿ @page "/" 
+ @page "/Employee/login" 
+@layout LoginLayout
+@inject NavigationManager navigation
+@inject ISnackbar Snackbar
+<PageTitle>Login</PageTitle>
+      
+
+            <div class="row align-items-center my-5 ">
+
+                <div class="col-lg-6 mb-5 mb-lg-0" >
+                    <h1 class="my-0 my-md-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+                        <img src="/ArtImages/godgore-logo-title.png"
+                             height="120"
+                             width="140"
+                             alt="#"
+                             loading="lazy" />
+                        <br />
+                        <span style="font-size: 25px; font-family: Calibri">Godgore Industries</span>
+                        <br />
+                        <span style="color: hsl(218, 81%, 75%); font-size: 19px; font-family: Calibri">Manufacturing is what we do!</span>
+
+                    </h1>
+
+                </div>
+  
+                <div class="col-lg-6 mb-5  ">
+      @*   <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong animate__animated animate__delay-1s animate__zoomIn"></div>
+        <div id="radius-shape-2" class="position-absolute shadow-5-strong animate__animated animate__delay-1s animate__zoomIn"></div>
+    *@     <MudCard Class=" position-relative">
+
+                        <div class="card-header">
+                <MudText Typo="Typo.h4" GutterBottom="false" Class="text-danger">ہمارا عملہ ہمارا بہترین سرمایہ</MudText>
+
+                        </div>
+                     
+                        <MudCardContent class="card-body p-5 pt-2 ">
+                          
+                    <MudTextField Required   T="string" @bind-value=EmpCode Label="پانچ ہندسوں والا کوڈ لکھیں" Variant="Variant.Filled"  Class="my-6 bg-white text-right"></MudTextField>
+
+                       
+                    <MudTextField Required @bind-Value="@Password" Label="پاسورڈ لکھیں" Variant="Variant.Filled" AdornmentColor="Color.Dark" InputType="@PasswordInput" Adornment="Adornment.End" AdornmentIcon="@PasswordInputIcon" OnAdornmentClick="TogglePasswordVisibility" />
+
+                <div Class="d-flex justify-space-between align-center">
+                    <MudCheckBox T="bool" Label="Remember me?" Color="Color.Primary" Class="ml-n1 my-3"></MudCheckBox>
+                </div>
+
+                <!-- Submit button -->
+                <MudLoadingButton @bind-Loading=@_LoadingLogin Disabled="@_LoadingLogin" 
+                OnClick="this.btnLogin_Click" Variant="Variant.Filled" 
+                Color="Color.Dark" 
+                Size="Size.Large" 
+                FullWidth="true">     
+                <LoadingContent >                   
+                </LoadingContent>
+                <ChildContent>
+                         سائن اِن کریں
+
+                     </ChildContent>
+            </MudLoadingButton>                      
+              
+            </MudCardContent>
+        </MudCard>
+
+                    </div>
+                </div>
+        
+   
+
+
+ @code{
+    SqlConnection ConnLogin = new SqlConnection(Global.Conn);
+    SqlConnection ConnLogin1 = new SqlConnection(Global.Conn);
+    SqlCommand cmdSelect=new SqlCommand();
+    SqlDataReader DRLogin;
+    string EmpCode { get; set; } = "";
+    string Password { get; set; } = "";
+    bool _LoadingLogin { get; set; } = false;
+    DataTable table = new DataTable();
+
+    bool PasswordVisibility;
+    InputType PasswordInput = InputType.Password;
+    string PasswordInputIcon = MudBlazor.Icons.Material.Filled.VisibilityOff;
+    protected override Task OnInitializedAsync()
+    {   
+        using (var da = new SqlDataAdapter("Select Code, Name, Designation, Password from Payroll_EmployeesView Where Status='Active'",ConnLogin))
+        {      
+            da.Fill(table);
+        }
+         return base.OnInitializedAsync();
+
+    }
+
+    private async Task btnLogin_Click()
+    {
+
+
+        try
+        {
+            _LoadingLogin = true;
+            if ((EmpCode == "" || EmpCode is null) || (Password == "" || Password is null))
+            {
+                Snackbar.Add("اپنا کوڈ اور پاسورڈ لکھیں۔", Severity.Error  );
+                await Task.Delay(200);
+                return;
+            }
+            foreach (DataRow row in table.Rows)
+            {
+                if (string.Equals(row["Code"].ToString(),EmpCode) && string.Equals(row["Password"].ToString(), Password))
+                {
+
+                    Global.EmpCode = EmpCode;
+                    Global.EmpName = row["Name"].ToString();
+                    Global.EmpDesignation = row["Designation"].ToString();
+                    Global.ImagePath = $"/EmpImages/{EmpCode}.jpg";
+                    Global.computerName = Environment.MachineName;
+                    await Task.Delay(2000);
+
+                    // GetServerDate();
+                    // navigation.NavigateTo($"/employee/leaves/{UserID}");     
+                    navigation.NavigateTo($"/employee/leaves");
+                    return;
+                }                        
+            }
+            Snackbar.Add("کوڈ یا پاسورڈ درُست نہیں۔", Severity.Error);
+            await Task.Delay(200);
+
+        }
+        catch(Exception ex)
+        {
+            Snackbar.Add(ex.ToString(), Severity.Normal);
+            
+        }
+        finally
+        {
+            _LoadingLogin = false;
+        }
+
+    }
+ 
+    void TogglePasswordVisibility()
+    {
+        @if (PasswordVisibility)
+        {
+            PasswordVisibility = false;
+            PasswordInputIcon = MudBlazor.Icons.Material.Filled.VisibilityOff;
+            PasswordInput = InputType.Password;
+        }
+        else
+        {
+            PasswordVisibility = true;
+            PasswordInputIcon = MudBlazor.Icons.Material.Filled.Visibility;
+            PasswordInput = InputType.Text;
+        }
+    }
+}
