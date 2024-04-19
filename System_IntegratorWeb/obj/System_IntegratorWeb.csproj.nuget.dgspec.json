@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GH Folder New\\System_IntegratorWebGHBlazor\\System_IntegratorWeb\\System_IntegratorWeb.csproj": {}
+    "C:\\System_IntegratorWeb\\System_IntegratorWeb\\System_IntegratorWeb.csproj": {}
   },
   "projects": {
-    "D:\\GH Folder New\\System_IntegratorWebGHBlazor\\System_IntegratorWeb\\System_IntegratorWeb.csproj": {
+    "C:\\System_IntegratorWeb\\System_IntegratorWeb\\System_IntegratorWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GH Folder New\\System_IntegratorWebGHBlazor\\System_IntegratorWeb\\System_IntegratorWeb.csproj",
+        "projectUniqueName": "C:\\System_IntegratorWeb\\System_IntegratorWeb\\System_IntegratorWeb.csproj",
         "projectName": "System_IntegratorWeb",
-        "projectPath": "D:\\GH Folder New\\System_IntegratorWebGHBlazor\\System_IntegratorWeb\\System_IntegratorWeb.csproj",
-        "packagesPath": "C:\\Users\\Ahsan\\.nuget\\packages\\",
-        "outputPath": "D:\\GH Folder New\\System_IntegratorWebGHBlazor\\System_IntegratorWeb\\obj\\",
+        "projectPath": "C:\\System_IntegratorWeb\\System_IntegratorWeb\\System_IntegratorWeb.csproj",
+        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
+        "outputPath": "C:\\System_IntegratorWeb\\System_IntegratorWeb\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Program Files (x86)\\VS Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Ahsan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
