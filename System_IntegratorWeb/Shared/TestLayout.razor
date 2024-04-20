@@ -8,26 +8,26 @@
 
     <MudLayout Style="overflow-y:hidden; background-color: rgb(49, 92, 127);">
     @* overflow-hidden background-radial-gradient *@
-    <MudAppBar  Dense=true Fixed  DisableGutters Elevation="1">
+    <MudAppBar   Dense=true Fixed   DisableGutters Elevation="1">
 
         <MudIconButton Class="ml-2" Icon="@MudBlazor.Icons.Material.Rounded.Notes" Color="Color.Surface" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
-        <img src="/artimages/godgore-logo-brand.png" height="30" alt="#" loading="lazy" />
+        @* <img src="/artimages/godgore-logo-brand.png" height="30" alt="#" loading="lazy" /> *@
         <MudSpacer />
-        <MudMenu AnchorOrigin="Origin.BottomRight" Dense="true" Class="mr-4">
+        <MudMenu AnchorOrigin="Origin.BottomRight" Disabled Dense="true" Class="mr-4">
             <ActivatorContent>
                 <MudAvatar Size=Size.Medium Image="/artimages/godgore-logo-brand.png" />
             </ActivatorContent>
             <ChildContent>
 
-                <MudListItem Text="پاسورڈ تبدیل کریں" Dense=true Icon="@MudBlazor.Icons.Material.Rounded.Person" Href="employee/change" />
-                <MudDivider Class="mb-2" />
+              @*   <MudListItem Text="پاسورڈ تبدیل کریں" Dense=true Icon="@MudBlazor.Icons.Material.Rounded.Person" Href="employee/change" />
+                <MudDivider Class="mb-2" /> *@
 
                 <MudListItem Text="لاگ آوٹ" Dense=true Icon="@MudBlazor.Icons.Material.Outlined.Login" Href="/" OnClick="@Global.Clear" />
             </ChildContent>
         </MudMenu>
 
 
-        <System_IntegratorWeb.Pages.LoadingIndicator IsLoading="@isLoading" />
+        @* <System_IntegratorWeb.Pages.LoadingIndicator IsLoading="@isLoading" /> *@
 
     </MudAppBar>
     <MudDrawer  Class="rounded-right mt-1 " @bind-Open="_drawerOpen" Elevation="1" ClipMode="_themeManager.DrawerClipMode">
@@ -87,7 +87,7 @@ else
 
     private ThemeManagerTheme _themeManager = new ThemeManagerTheme();
 
-    public bool _drawerOpen = true;
+    public bool _drawerOpen = false;
     public bool _themeManagerOpen = false;
     public bool DarkModeToggle = false;
 

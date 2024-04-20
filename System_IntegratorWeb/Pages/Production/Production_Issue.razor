@@ -12,9 +12,78 @@
                     <div class="form-row">
                         <div class="form-group col-6">
                             <label for="dtpOrderDate">Issue Date</label>
+                            <MudDatePicker Date="IssueDate" Variant="Variant.Outlined" DateFormat="dd MMM yyyy" Margin=Margin.Dense ReadOnly></MudDatePicker>
                             <input type="date" readonly="readonly" class="form-control form-control-sm" style="font-family: calibri; border-radius: 4px; border-style: ridge; border: 1px solid #ccc;" id="dtpIssueDate" value="">
                         </div>
-                        <!-- Other form groups... -->
+                        <div class="form-group col-6  ">
+                            <label for="txtProdLineName">Product Line</label>
+                            <input runat="server" type="text" class="form-control  " id="txtIssueProdLineCode" style="display: none" />
+                            <MudAutocomplete T="string"  Label="US States"  @bind-Value="value2" SearchFunc="@Search2"
+                                             ResetValueOnEmptyText="@resetValueOnEmptyText"
+                                             CoerceText="@coerceText" CoerceValue="@coerceValue"
+                                             AdornmentIcon="@Icons.Material.Filled.Search" AdornmentColor="Color.Primary" />
+                            <MudAutocomplete T="string" Label="US States" @bind-Value="value2" SearchFunc="@Search1" ShowProgressIndicator="true">
+                                <ProgressIndicatorTemplate>
+                                    <MudProgressLinear Size="Size.Small" Indeterminate="true" Color="Color.Default" />
+                                </ProgressIndicatorTemplate>
+                            </MudAutocomplete>
+                            <asp:DropDownList runat="server" AutoPostBack="true" CssClass="form-control form-control-sm  " ID="txtIssueProdLine" Style="color: black">
+                            </asp:DropDownList>
+                        </div>
+
+                        <div class="form-group  col-6">
+                            <label for="txtCompany">Order No</label>
+                            <div class="input-group">
+                                <input runat="server" readonly="" type="text" id="txtIssueOrderNo" class="form-control form-control-sm" style="color: black" />
+                                <asp:DropDownList runat="server" AutoPostBack="true" CssClass="form-control  form-control-sm  p-0 " ID="txtIssueCustOrderNo" Style="color: black; width: 50%">
+                                </asp:DropDownList>
+
+                            </div>
+                        </div>
+                        <div class="form-group  col-6">
+                            <label for="txtCompany">Article No</label>
+                            <div class="input-group">
+                                <input runat="server" type="text" id="txtIssueArtColor" style="display: none" />
+                                <input runat="server" type="text" id="txtIssueArtSize" style="display: none" />
+                                <input runat="server" readonly="" type="text" class="form-control form-control-sm" id="txtIssueArtCode" style="color: black;width:20%" />
+                                <asp:DropDownList runat="server" AutoPostBack="true" CssClass="form-control  form-control-sm  p-0 " ID="txtIssueArticleNo" Style="color: black; width: 50%">
+                                </asp:DropDownList>
+
+                            </div>
+                        </div>
+                        <div class="form-group col-6  ">
+                            <label for="">From Process</label>
+                            <input runat="server" type="text" id="txtIssueFromSerial" style="display: none" />
+                            <input runat="server" type="text" class="form-control  " id="txtIssueFromProcessCode" style="display: none" />
+                            <asp:DropDownList runat="server" AutoPostBack="true" CssClass="form-control form-control-sm  " ID="txtIssueFromProcess" Style="color: black">
+                            </asp:DropDownList>
+                        </div>
+                        <div class="form-group col-6  ">
+                            <label for="">To Process</label>
+                            <input runat="server" type="text" id="txtIssueToSerial" style="display: none" />
+                            <input runat="server" type="text" class="form-control  " id="txtIssueToProcessCode" style="display: none" />
+                            <asp:DropDownList runat="server" AutoPostBack="true" CssClass="form-control form-control-sm  " ID="txtIssueToProcess" Style="color: black">
+                            </asp:DropDownList>
+                        </div>
+
+                        <div class="form-group  col-12">
+                            <label for="txtCompany">Worker</label>
+                            <div class="input-group">
+                                <input runat="server" type="text" class="form-control form-control-sm" id="txtIssueWorkerCode" readonly="readonly" style="color: black; width: 20%" />
+
+                                <asp:DropDownList runat="server" AutoPostBack="true" CssClass="form-control  form-control-sm  p-0 " ID="txtIssueWorkers" Style="color: black; width: 50%">
+                                </asp:DropDownList>
+                                <div class="input-group-prepend">
+                                    <asp:LinkButton OnClientClick="return showLoadingModal();return false;" ID="btnIssueReload" Style="padding: 2px 10px 2px 10px" CssClass="btn btn-primary rounded-right" runat="server">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
+                                            <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
+                                        </svg>
+                                    </asp:LinkButton>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -30,7 +99,7 @@
             </div>
         </div>
     </div>
-</div>
+
 
 
 @* For Receive *@
@@ -120,6 +189,7 @@
     </DialogActions>
 </MudDialog> *@
 @code {
+        DateTime IssueDate = DateTime.Today;
     private bool visible;
     private bool nestedVisible;
 
@@ -135,6 +205,109 @@
     void Reload()
     {
         
+    }
+    private bool resetValueOnEmptyText;
+    private bool coerceText;
+    private bool coerceValue;
+    private string value1, value2;
+    private string[] states =
+    {
+        "Alabama", "Alaska", "American Samoa", "Arizona",
+        "Arkansas", "California", "Colorado", "Connecticut",
+        "Delaware", "District of Columbia", "Federated States of Micronesia",
+        "Florida", "Georgia", "Guam", "Hawaii", "Idaho",
+        "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky",
+        "Louisiana", "Maine", "Marshall Islands", "Maryland",
+        "Massachusetts", "Michigan", "Minnesota", "Mississippi",
+        "Missouri", "Montana", "Nebraska", "Nevada",
+        "New Hampshire", "New Jersey", "New Mexico", "New York",
+        "North Carolina", "North Dakota", "Northern Mariana Islands", "Ohio",
+        "Oklahoma", "Oregon", "Palau", "Pennsylvania", "Puerto Rico",
+        "Rhode Island", "South Carolina", "South Dakota", "Tennessee",
+        "Texas", "Utah", "Vermont", "Virgin Island", "Virginia",
+        "Washington", "West Virginia", "Wisconsin", "Wyoming",
+    };
+
+    private async Task<IEnumerable<string>> Search1(string value)
+   {
+        // In real life use an asynchronous function for fetching data from an api.
+        await Task.Delay(5);
+
+        // if text is null or empty, show complete list
+        if (string.IsNullOrEmpty(value))
+            return states;
+        return states.Where(x => x.Contains(value, StringComparison.InvariantCultureIgnoreCase));
+    }
+    public async Task<IEnumerable<string>> Search3(string value)
+    {
+        // In real life use an asynchronous function for fetching data from an api.
+        await Task.Delay(5);
+
+        // SQL Server connection string
+        string connectionString = "YourConnectionStringHere";
+
+        // Initialize an empty list to store results
+        List<string> results = new List<string>();
+
+        // If text is null or empty, return complete list
+        if (string.IsNullOrEmpty(value))
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                // Open the connection
+                connection.Open();
+
+                // Define the SQL command
+                SqlCommand command = new SqlCommand("SELECT Name FROM States", connection);
+
+                // Execute the command
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    // Read each row and add the state name to the results list
+                    while (reader.Read())
+                    {
+                        results.Add(reader.GetString(0)); // Assuming 'Name' is the first column
+                    }
+                }
+            }
+        }
+        else
+        {
+            // If text is not null or empty, perform a search
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                // Open the connection
+                connection.Open();
+
+                // Define the SQL command with parameterized query to prevent SQL injection
+                SqlCommand command = new SqlCommand("SELECT Name FROM States WHERE Name LIKE '%' + @value + '%'", connection);
+                command.Parameters.AddWithValue("@value", value);
+
+                // Execute the command
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    // Read each row and add the state name to the results list
+                    while (reader.Read())
+                    {
+                        results.Add(reader.GetString(0)); // Assuming 'Name' is the first column
+                    }
+                }
+            }
+        }
+
+        // Return the results
+        return results;
+    }
+
+    private async Task<IEnumerable<string>> Search2(string value)
+    {
+        // In real life use an asynchronous function for fetching data from an api.
+        await Task.Delay(5);
+
+        // if text is null or empty, don't return values (drop-down will not open)
+        if (string.IsNullOrEmpty(value))
+            return new string[0];
+        return states.Where(x => x.Contains(value, StringComparison.InvariantCultureIgnoreCase));
     }
 }
 
