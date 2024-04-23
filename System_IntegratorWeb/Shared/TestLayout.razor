@@ -7,11 +7,11 @@
 @if (Global.EmpCode != "") {
 
     <MudLayout Style="overflow-y:hidden; background-color: rgb(49, 92, 127);">
-    @* overflow-hidden background-radial-gradient *@
+  
     <MudAppBar   Dense=true Fixed   DisableGutters Elevation="1">
 
         <MudIconButton Class="ml-2" Icon="@MudBlazor.Icons.Material.Rounded.Notes" Color="Color.Surface" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
-        @* <img src="/artimages/godgore-logo-brand.png" height="30" alt="#" loading="lazy" /> *@
+      <img src="/artimages/godgore-logo-brand.png" height="30" alt="#" loading="lazy" /> 
         <MudSpacer />
         <MudMenu AnchorOrigin="Origin.BottomRight" Disabled Dense="true" Class="mr-4">
             <ActivatorContent>

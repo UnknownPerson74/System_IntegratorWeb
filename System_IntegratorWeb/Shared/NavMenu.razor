@@ -7,24 +7,27 @@
      <MudNavLink Href="/employee/leaves" Icon="@MudBlazor.Icons.Material.Filled.AutoStories">Leave</MudNavLink>
      <MudNavLink Href="/employee/attendance" Icon="@MudBlazor.Icons.Material.Filled.EventAvailable">Attendance</MudNavLink>
      @* <MudNavLink Href="@($"/employee/leaves/{Global.userID}")" Icon="@MudBlazor.Icons.Material.Filled.Person">Leaves</MudNavLink> *@
-
-    <MudText Typo="Typo.subtitle2" Color="Color.Inherit" Class="ml-4 my-3">App Examples</MudText>
+    <MudText Typo="Typo.subtitle2" Color="Color.Inherit" Class="ml-4 my-3">ERP</MudText>
+    <MudNavGroup Title="Production" Icon="@MudBlazor.Icons.Material.Filled.AssignmentInd" HideExpandIcon="true">
+        <MudNavLink Href="/production/issue" Icon="@MudBlazor.Icons.Material.Filled.Assignment">Issuance</MudNavLink>
+    </MudNavGroup>
+ @*    <MudText Typo="Typo.subtitle2" Color="Color.Inherit" Class="ml-4 my-3">App Examples</MudText>
      <MudNavLink Href="application/email" Match="NavLinkMatch.Prefix" Icon="@MudBlazor.Icons.Material.Filled.Email">Email</MudNavLink>
      <MudNavLink Href="application/chat" Icon="@MudBlazor.Icons.Material.Filled.Forum">Chat</MudNavLink>
     <MudNavLink Href="application/todo" Icon="@MudBlazor.Icons.Custom.Uncategorized.AlertSuccess">Todo</MudNavLink>
      <MudNavLink Href="application/users" Icon="@MudBlazor.Icons.Material.Filled.PeopleAlt">Users</MudNavLink>
-
-    <MudText Typo="Typo.subtitle2" Color="Color.Inherit" Class="ml-4 my-3">Pages</MudText>
+ *@
+   @*  <MudText Typo="Typo.subtitle2" Color="Color.Inherit" Class="ml-4 my-3">Pages</MudText>
      <MudNavGroup Title="Authentication" Icon="@MudBlazor.Icons.Material.Filled.AssignmentInd" HideExpandIcon="true">
         <MudNavLink Href="pages/authentication/login" Icon="@MudBlazor.Icons.Material.Filled.InsertDriveFile">Login</MudNavLink>
          <MudNavLink Href="pages/authentication/register" Icon="@MudBlazor.Icons.Material.Filled.InsertDriveFile">Register</MudNavLink>
          <MudNavLink Href="pages/authentication/forgot-password" Icon="@MudBlazor.Icons.Material.Filled.InsertDriveFile">Forgot Password</MudNavLink>
          <MudNavLink Href="pages/authentication/reset-password" Icon="@MudBlazor.Icons.Material.Filled.InsertDriveFile">Reset Password</MudNavLink>
-    </MudNavGroup>
-    <MudNavGroup Title="Error" Icon="@AlertAssignmentIcon" HideExpandIcon="true">
+    </MudNavGroup> *@
+ @*    <MudNavGroup Title="Error" Icon="@AlertAssignmentIcon" HideExpandIcon="true">
          <MudNavLink Href="pages/error/404" Icon="@MudBlazor.Icons.Material.Filled.InsertDriveFile">404</MudNavLink>
          <MudNavLink Href="pages/utility/faq" Icon="@MudBlazor.Icons.Material.Filled.InsertDriveFile">Faq</MudNavLink>
-     </MudNavGroup>
+     </MudNavGroup> *@
 </MudNavMenu>
 
 @code {

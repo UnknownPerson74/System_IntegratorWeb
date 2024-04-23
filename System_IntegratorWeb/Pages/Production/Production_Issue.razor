@@ -1,215 +1,162 @@
-﻿ @page "/"
- @layout TestLayout
+﻿ @page "/production/issue"
 @inject IDialogService DialogService
+<PageTitle>Issuance</PageTitle>
+<MudTabs Elevation="2"  KeepPanelsAlive  Color="Color.Dark" Rounded="true" Centered=true PanelClass="my-4 text-center">
+ <MudTabPanel Text="Issuance" Class="font-weight-bold text-center">
+     <MudGrid>
+    <MudItem xs="12">
+        <MudCard Elevation="2">
+            <MudCardContent>
+                <MudGrid>
+                    <MudItem xs="12"  sm="4">
+                        <MudDatePicker Date="IssueDate" DateFormat="dd MMM yyyy"  Margin="Margin.Dense" Label="Issue Date" Variant=Variant.Outlined ReadOnly />
+                    </MudItem>
+                    <MudItem xs="12" sm="4">
+                         <MudAutocomplete T="string" Label="Product Line" SearchFunc="@Search1" ShowProgressIndicator="true"  Variant="Variant.Outlined"  Margin="Margin.Dense" Dense=true
+                           AdornmentIcon="@Icons.Material.Filled.Search" AdornmentColor="Color.Default" Required RequiredError="Please select product line..."   ResetValueOnEmptyText=true >
+                            <ProgressIndicatorTemplate>
+                                <MudProgressLinear Size="Size.Small" Indeterminate="true" Color="Color.Error" />
+                            </ProgressIndicatorTemplate>
+                        </MudAutocomplete>
+                    </MudItem>
+                    <MudItem xs="12" sm="6">
+                           <MudAutocomplete T="string" Label="Order" SearchFunc="@Search1" ShowProgressIndicator="true"  Variant="Variant.Outlined"  Margin="Margin.Dense" Dense=true
+                           AdornmentIcon="@Icons.Material.Filled.Search" AdornmentColor="Color.Default" Required RequiredError="Please select order..."   ResetValueOnEmptyText=true >
+                            <ProgressIndicatorTemplate>
+                                <MudProgressLinear Size="Size.Small" Indeterminate="true" Color="Color.Error" />
+                            </ProgressIndicatorTemplate>
+                        </MudAutocomplete>
+                    </MudItem>
+                    <MudItem xs="12" sm="6">
+                           <MudAutocomplete T="string" Label="Article" SearchFunc="@Search1" ShowProgressIndicator="true"  Variant="Variant.Outlined"  Margin="Margin.Dense" Dense=true
+                           AdornmentIcon="@Icons.Material.Filled.Search" AdornmentColor="Color.Default" Required RequiredError="Please select article..."   ResetValueOnEmptyText=true >
+                            <ProgressIndicatorTemplate>
+                                <MudProgressLinear Size="Size.Small" Indeterminate="true" Color="Color.Error" />
+                            </ProgressIndicatorTemplate>
+                        </MudAutocomplete>
+                    </MudItem>
+                    <MudDivider />
 
- <div class="alert message_alert" tabindex="0" style="z-index: 1;" id="alertIssuance"></div>
+                    <MudItem xs="12" sm="4">
+                 <MudSelect @bind-Value="IssueFromProcess" Margin="Margin.Dense" AnchorOrigin=Origin.BottomCenter T="string" Label="From Process" Variant="Variant.Outlined" Clearable=true Required RequiredError="Select from process...">
+                                     <MudSelectItem Value="@("Tyrannosaur")" />
+                                     <MudSelectItem Value="@("Triceratops")" />
+                                     <MudSelectItem Value="@("Henon Rex")" />
+                                 </MudSelect>
+                    </MudItem>
+                    <MudItem xs="12" sm="4">
+                          <MudSelect @bind-Value="IssueToProcess" AnchorOrigin=Origin.BottomCenter Margin="Margin.Dense" T="string" Label="To Process" Variant="Variant.Outlined" Clearable=true  Required RequiredError="Select to process...">
+                                     <MudSelectItem Value="@("Tyrannosaur")" />
+                                     <MudSelectItem Value="@("Triceratops")" />
+                                     <MudSelectItem Value="@("Henon Rex")" />
+                                 </MudSelect>
+                    </MudItem>
 
-<div class="container-fluid" style="background-color: rgb(49, 92, 127); font-size: small;">
-    <div class="row pt-2 pb-2">
-        <div class="col-12 mb-1">
-            <div class="card">
-                <div class="card-body pb-0 pb-md-2">
-                    <div class="form-row">
-                        <div class="form-group col-6">
-                            <label for="dtpOrderDate">Issue Date</label>
-                            <MudDatePicker Date="IssueDate" Variant="Variant.Outlined" DateFormat="dd MMM yyyy" Margin=Margin.Dense ReadOnly></MudDatePicker>
-                            <input type="date" readonly="readonly" class="form-control form-control-sm" style="font-family: calibri; border-radius: 4px; border-style: ridge; border: 1px solid #ccc;" id="dtpIssueDate" value="">
-                        </div>
-                        <div class="form-group col-6  ">
-                            <label for="txtProdLineName">Product Line</label>
-                            <input runat="server" type="text" class="form-control  " id="txtIssueProdLineCode" style="display: none" />
-                            <MudAutocomplete T="string"  Label="US States"  @bind-Value="value2" SearchFunc="@Search2"
-                                             ResetValueOnEmptyText="@resetValueOnEmptyText"
-                                             CoerceText="@coerceText" CoerceValue="@coerceValue"
-                                             AdornmentIcon="@Icons.Material.Filled.Search" AdornmentColor="Color.Primary" />
-                            <MudAutocomplete T="string" Label="US States" @bind-Value="value2" SearchFunc="@Search1" ShowProgressIndicator="true">
-                                <ProgressIndicatorTemplate>
-                                    <MudProgressLinear Size="Size.Small" Indeterminate="true" Color="Color.Default" />
-                                </ProgressIndicatorTemplate>
-                            </MudAutocomplete>
-                            <asp:DropDownList runat="server" AutoPostBack="true" CssClass="form-control form-control-sm  " ID="txtIssueProdLine" Style="color: black">
-                            </asp:DropDownList>
-                        </div>
+                    <MudItem xs="12" sm="4">
 
-                        <div class="form-group  col-6">
-                            <label for="txtCompany">Order No</label>
-                            <div class="input-group">
-                                <input runat="server" readonly="" type="text" id="txtIssueOrderNo" class="form-control form-control-sm" style="color: black" />
-                                <asp:DropDownList runat="server" AutoPostBack="true" CssClass="form-control  form-control-sm  p-0 " ID="txtIssueCustOrderNo" Style="color: black; width: 50%">
-                                </asp:DropDownList>
+                           <MudAutocomplete T="string" Label="Worker" SearchFunc="@Search1" ShowProgressIndicator="true"  Variant="Variant.Outlined"  Margin="Margin.Dense" Dense=true
+                           AdornmentIcon="@Icons.Material.Filled.Search" AdornmentColor="Color.Default" Required RequiredError="Please select article..."   ResetValueOnEmptyText=true >
+                            <ProgressIndicatorTemplate>
+                                <MudProgressLinear Size="Size.Small" Indeterminate="true" Color="Color.Error" />
+                            </ProgressIndicatorTemplate>
+                        </MudAutocomplete>
+                    </MudItem>
 
-                            </div>
-                        </div>
-                        <div class="form-group  col-6">
-                            <label for="txtCompany">Article No</label>
-                            <div class="input-group">
-                                <input runat="server" type="text" id="txtIssueArtColor" style="display: none" />
-                                <input runat="server" type="text" id="txtIssueArtSize" style="display: none" />
-                                <input runat="server" readonly="" type="text" class="form-control form-control-sm" id="txtIssueArtCode" style="color: black;width:20%" />
-                                <asp:DropDownList runat="server" AutoPostBack="true" CssClass="form-control  form-control-sm  p-0 " ID="txtIssueArticleNo" Style="color: black; width: 50%">
-                                </asp:DropDownList>
+                </MudGrid>
+            </MudCardContent>
+            <MudCardActions  Class="pb-4 justify-content-end">
+                <MudLoadingButton @bind-Loading=@_LoadingIssue Disabled="@_LoadingIssue" StartIcon="@MudBlazor.Icons.Material.Filled.YoutubeSearchedFor" OnClick="GetIssuableArticles" Variant="Variant.Filled"
+                                  Color="Color.Primary" Size="Size.Medium" Class=" font-weight-bold" >Show Issuable Articles </MudLoadingButton>
+            </MudCardActions>
+        </MudCard>
+    </MudItem>
+     <MudItem xs="12">
+                <MudCard Elevation="25">
+                    <MudCardHeader>
+                        <CardHeaderContent>
+                                <MudText Typo="Typo.h5">Issuance Detail</MudText>
+                                 <MudLoadingButton @bind-Loading="_LoadingIssue" ButtonVariant="MudExtensions.Enums.ButtonVariant.IconButton" Size="Size.Medium" 
+                               Icon="@MudBlazor.Icons.Material.Filled.Refresh" Variant="Variant.Outlined" Color="Color.Primary"></MudLoadingButton>
+                        </CardHeaderContent>
+                    </MudCardHeader>
+                    <MudCardContent>
+                            <MudSimpleTable Hover="true"  FixedHeader="true" Style="height:400px">
+                                <thead>
+                                    <tr>
+                                        @foreach (var h in headings)
+                                    {
+                                        <th>@h</th>
+                                    }
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var row in rows)
+                                {
+                                    <tr>
+                                        @foreach (var x in row.Split())
+                                        {
+                                            <td>@x</td>
+                                        }
+                                    </tr>
+                                }
+                            </tbody>
+                        </MudSimpleTable>
+                    </MudCardContent>
+                  
+                </MudCard>
+            </MudItem>
+</MudGrid>
 
-                            </div>
-                        </div>
-                        <div class="form-group col-6  ">
-                            <label for="">From Process</label>
-                            <input runat="server" type="text" id="txtIssueFromSerial" style="display: none" />
-                            <input runat="server" type="text" class="form-control  " id="txtIssueFromProcessCode" style="display: none" />
-                            <asp:DropDownList runat="server" AutoPostBack="true" CssClass="form-control form-control-sm  " ID="txtIssueFromProcess" Style="color: black">
-                            </asp:DropDownList>
-                        </div>
-                        <div class="form-group col-6  ">
-                            <label for="">To Process</label>
-                            <input runat="server" type="text" id="txtIssueToSerial" style="display: none" />
-                            <input runat="server" type="text" class="form-control  " id="txtIssueToProcessCode" style="display: none" />
-                            <asp:DropDownList runat="server" AutoPostBack="true" CssClass="form-control form-control-sm  " ID="txtIssueToProcess" Style="color: black">
-                            </asp:DropDownList>
-                        </div>
+     </MudTabPanel>
+     
 
-                        <div class="form-group  col-12">
-                            <label for="txtCompany">Worker</label>
-                            <div class="input-group">
-                                <input runat="server" type="text" class="form-control form-control-sm" id="txtIssueWorkerCode" readonly="readonly" style="color: black; width: 20%" />
-
-                                <asp:DropDownList runat="server" AutoPostBack="true" CssClass="form-control  form-control-sm  p-0 " ID="txtIssueWorkers" Style="color: black; width: 50%">
-                                </asp:DropDownList>
-                                <div class="input-group-prepend">
-                                    <asp:LinkButton OnClientClick="return showLoadingModal();return false;" ID="btnIssueReload" Style="padding: 2px 10px 2px 10px" CssClass="btn btn-primary rounded-right" runat="server">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
-                                            <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
-                                        </svg>
-                                    </asp:LinkButton>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card mt-1">
-                <div class="card-body bg-white p-0 p-sm-1 p-md-2">
-                    <div style="width: 100%; min-height: auto; max-height: 52vh; display: block; overflow: scroll; background-color: whitesmoke; z-index: 2; font-size: small;" visible="true">
-                        <!-- GridView Equivalent -->
-                    </div>
-                    <div class="card-footer bg-light">
-                        <!-- Card Footer Content -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-@* For Receive *@
-<div class="alert message_alert" tabindex="0" style="z-index: 1;" id="alertReceive"></div>
-
-<div class="container-fluid" style="background-color: rgb(49, 92, 127); font-size: small;">
-    <div class="row pt-2 pb-2">
-        <div class="col-12 col-sm-9 mb-1">
-            <div class="card">
-                <div class="card-body pb-0 pb-md-2">
-                    <div class="form-row">
-                        <div class="form-group col-6">
-                            <label for="dtpOrderDate">Receive Date</label>
-                            <input type="date" readonly="readonly" class="form-control form-control-sm" style="font-family: calibri; border-radius: 4px; border-style: ridge; border: 1px solid #ccc;" id="dtpRecDate" value="">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-6 ml-auto">
-                            <label for="txtRecProdLine">Product Line</label>
-                            <input type="text" class="form-control" id="txtRecProdLineCode" style="display: none">
-                            <!-- MudBlazor DropDownList equivalent -->
-                        </div>
-                        <div class="form-group col-6">
-                            <label for="txtRecProcess">Process</label>
-                            <input type="text" class="form-control" id="txtRecProcessCode" style="display: none">
-                            <!-- MudBlazor DropDownList equivalent -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card mt-1">
-                <div class="card-body bg-white p-0 p-sm-1 p-md-2">
-                    <div style="width: 100%; min-height: auto; max-height: 52vh; display: block; overflow: scroll; background-color: whitesmoke; z-index: 2; font-size: small;" visible="true">
-                        <!-- MudBlazor GridView equivalent -->
-                    </div>
-                    <div class="card-footer bg-light">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="chkSelectAll" />
-                            <label class="form-check-label" for="chkSelectAll">Select All</label>
-                        </div>
-                        <MudButton @onclick="SaveReceive" Variant="Variant.Filled" Color="Color.Primary">Save</MudButton>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-sm-3 pl-3 pl-sm-0">
-            <div class="card">
-                <div class="card-header p-1" style="background: #c1e2ff">
-                    <div class="form-row">
-                        <div class="col">
-                            <MudButton @onclick="Reload" Variant="Variant.Outlined" Color="Color.Primary">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
-                                    <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
-                                </svg>
-                            </MudButton>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body p-1">
-                    <!-- MudBlazor GridView for WorkerList -->
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+    </MudTabs>
 
 
-<MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="Open">Open Inline</MudButton>
-
-@* @*Outer inline dialog
-<MudDialog @bind-IsVisible="visible">
+<MudDialog @bind-IsVisible="visible" >
     <DialogContent>
         <MudText>Hi There, I'm an inline dialog!</MudText>
-        <MudButton Variant="Variant.Filled" Color="Color.Tertiary" OnClick="OpenNested">Open Nested</MudButton>
-        <MudDialog @bind-IsVisible="nestedVisible">
-            <DialogContent>
-                <MudText Class="nested">Nested inline dialog!</MudText>
-            </DialogContent>
-            <DialogActions>
-                <MudButton Color="Color.Primary" OnClick="CloseNested">Close</MudButton>
-            </DialogActions>
-        </MudDialog>
+     
     </DialogContent>
     <DialogActions>
         <MudButton Color="Color.Primary" OnClick="Close">Close</MudButton>
     </DialogActions>
-</MudDialog> *@
+</MudDialog>
 @code {
-        DateTime IssueDate = DateTime.Today;
+    bool _LoadingIssue { get; set; } = false;
+    DateTime IssueDate = DateTime.Today;
     private bool visible;
     private bool nestedVisible;
-
+    private string IssueFromProcess, IssueToProcess,IssueWorker;
     private void Open() => visible = true;
     private void Close() => visible = false;
     private void OpenNested() => nestedVisible = true;
     private void CloseNested() => nestedVisible = false;
-
+        string[] headings = { "ID", "Name", "Email", "Gender", "IP Address" };
+    string[] rows = {
+        @"1 Krishna kpartner0@usatoday.com Male 28.25.250.202",
+        @"2 Webb wstitle1@ning.com Male 237.168.134.114",
+        @"3 Nathanil nneal2@cyberchimps.com Male 92.6.0.175",
+        @"4 Adara alockwood3@patch.com Female 182.174.217.152",
+        @"5 Cecilius cchaplin4@shinystat.com Male 195.124.144.18",
+        @"6 Cicely cemerine9@soup.io Female 138.94.191.43",
+    };
     void SaveReceive()
     {
         
     }
-    void Reload()
+    void SaveIssuance()
     {
         
     }
-    private bool resetValueOnEmptyText;
+    void GetIssuableArticles()
+    {
+        visible = true;
+    }
+    private bool resetValueOnEmptyText=true;
     private bool coerceText;
     private bool coerceValue;
-    private string value1, value2;
+    private string value1, value2="";
     private string[] states =
     {
         "Alabama", "Alaska", "American Samoa", "Arizona",
