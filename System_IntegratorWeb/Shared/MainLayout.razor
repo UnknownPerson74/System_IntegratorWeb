@@ -1,4 +1,6 @@
-﻿@inherits LayoutComponentBase
+﻿@using StoicDreams.Core.Constants
+@using StoicDreams.Core.Extensions
+@inherits LayoutComponentBase
 
 <MudThemeProvider Theme="_themeManager.Theme" IsDarkMode="@DarkModeToggle" />
 <MudDialogProvider />
@@ -25,9 +27,6 @@
             </ChildContent>
         </MudMenu>
 
-
-        <System_IntegratorWeb.Pages.LoadingIndicator IsLoading="@isLoading" />
-
     </MudAppBar>
     <MudDrawer  Class="rounded-right mt-1 " @bind-Open="_drawerOpen" Elevation="1" ClipMode="_themeManager.DrawerClipMode">
         <MudToolBar Dense="true" DisableGutters="true" Class="px-1 docs-gray-bg">
@@ -45,8 +44,8 @@
     <div id="radius-shape-2" class="gooey position-fixed   shadow "></div>
     <div class="gooey position-fixed shadow" style="bottom:50px"></div>*@
     <MudMainContent  >
-
-        <MudContainer MaxWidth="MaxWidth.False" Class="my-1">
+ 
+            <MudContainer MaxWidth="MaxWidth.False" Class="mt-2 " Style="margin-bottom: 80px !important;">
             @Body
         
             <MudScrollToTop TopOffset="100" Style="z-index:2000;">
@@ -104,7 +103,7 @@ else
     {
         _themeManagerOpen = value;
     }
-
+  
     protected override void OnInitialized()
     {
 

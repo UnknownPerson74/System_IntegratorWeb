@@ -65,12 +65,77 @@
                 </MudGrid>
             </MudCardContent>
             <MudCardActions  Class="pb-4 justify-content-end">
-                <MudLoadingButton @bind-Loading=@_LoadingIssue Disabled="@_LoadingIssue" StartIcon="@MudBlazor.Icons.Material.Filled.YoutubeSearchedFor" OnClick="GetIssuableArticles" Variant="Variant.Filled"
-                                  Color="Color.Primary" Size="Size.Medium" Class=" font-weight-bold" >Show Issuable Articles </MudLoadingButton>
+               
             </MudCardActions>
         </MudCard>
+                <MudToolBar DisableGutters="true">
+                    <MudLoadingButton @bind-Loading=@_LoadingIssue Disabled="@_LoadingIssue" StartIcon="@MudBlazor.Icons.Material.Filled.YoutubeSearchedFor" OnClick="GetIssuableArticles" Variant="Variant.Filled"
+                                      Color="Color.Primary" Size="Size.Medium" Class=" font-weight-bold">Show Issuable Articles </MudLoadingButton>
+                </MudToolBar>
     </MudItem>
      <MudItem xs="12">
+                <MudCard Style="position:relative;" Elevation="25">
+                    <MudCardHeader>
+                        <CardHeaderContent>
+                            <MudToolBar DisableGutters="true">
+                                <MudText Typo="Typo.h5">Issuance Detail</MudText>
+                                <MudSpacer />
+                                <MudLoadingButton @bind-Loading="_LoadingIssue" OnClick="OpenOverlay" ButtonVariant="MudExtensions.Enums.ButtonVariant.IconButton" Size="Size.Medium"
+                                                  Icon="@MudBlazor.Icons.Material.Filled.Refresh" Variant="Variant.Outlined" Color="Color.Primary"></MudLoadingButton>
+                            </MudToolBar>
+                            
+                             
+                        </CardHeaderContent>
+                    </MudCardHeader>
+                    <MudCardContent>
+                        @if (isVisible)
+    {
+                            <MudSkeleton SkeletonType="SkeletonType.Rectangle" Height="400px" />
+
+                            <MudOverlay LightBackground Visible="isVisible" DarkBackground="true" Absolute="true">
+            <MudProgressCircular Color="Color.Secondary" Indeterminate="true" />
+        </MudOverlay>
+    }
+    else
+    {
+                            <MudSimpleTable Hover="true"  FixedHeader="true" Style="height:400px">
+                                <thead>
+                                    <tr>
+                                        @foreach (var h in headings)
+                                    {
+                                        <th>@h</th>
+                                    }
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var row in rows)
+                                {
+                                    <tr>
+                                        @foreach (var x in row.Split())
+                                        {
+                                            <td>@x</td>
+                                        }
+                                    </tr>
+                                }
+                            </tbody>
+                        </MudSimpleTable>
+                        }
+                    </MudCardContent>
+                  
+                </MudCard>
+            </MudItem>
+</MudGrid>
+
+     </MudTabPanel>
+     
+
+    </MudTabs>
+
+
+<MudDialog @bind-IsVisible="visible" Options="maxWidth">
+    <DialogContent>
+        <MudGrid>
+        <MudItem xs="12">
                 <MudCard Elevation="25">
                     <MudCardHeader>
                         <CardHeaderContent>
@@ -106,33 +171,49 @@
                 </MudCard>
             </MudItem>
 </MudGrid>
-
-     </MudTabPanel>
-     
-
-    </MudTabs>
-
-
-<MudDialog @bind-IsVisible="visible" >
-    <DialogContent>
-        <MudText>Hi There, I'm an inline dialog!</MudText>
      
     </DialogContent>
     <DialogActions>
         <MudButton Color="Color.Primary" OnClick="Close">Close</MudButton>
     </DialogActions>
 </MudDialog>
+
 @code {
+    private bool isVisible;
+    private bool dataLoaded;
+
+    public async void OpenOverlay()
+    {
+        isVisible = true;
+        await Task.Delay(3000);
+        isVisible = false;
+        dataLoaded = true;
+        StateHasChanged();
+    }
+
+    public void ResetExample()
+    {
+        dataLoaded = false;
+    }
+}
+@code {
+    DialogOptions maxWidth = new DialogOptions() {
+            MaxWidth = MaxWidth.Medium,
+            FullWidth = true,
+            CloseButton = true,
+            DisableBackdropClick=true ,
+            CloseOnEscapeKey=true
+    };
     bool _LoadingIssue { get; set; } = false;
     DateTime IssueDate = DateTime.Today;
     private bool visible;
     private bool nestedVisible;
-    private string IssueFromProcess, IssueToProcess,IssueWorker;
+    private string? IssueFromProcess, IssueToProcess,IssueWorker;
     private void Open() => visible = true;
     private void Close() => visible = false;
     private void OpenNested() => nestedVisible = true;
     private void CloseNested() => nestedVisible = false;
-        string[] headings = { "ID", "Name", "Email", "Gender", "IP Address" };
+    string[] headings = { "ID", "Name", "Email", "Gender", "IP Address" };
     string[] rows = {
         @"1 Krishna kpartner0@usatoday.com Male 28.25.250.202",
         @"2 Webb wstitle1@ning.com Male 237.168.134.114",
@@ -143,16 +224,17 @@
     };
     void SaveReceive()
     {
-        
+
     }
     void SaveIssuance()
     {
-        
+
     }
     void GetIssuableArticles()
     {
         visible = true;
     }
+
     private bool resetValueOnEmptyText=true;
     private bool coerceText;
     private bool coerceValue;
